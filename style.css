@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --myshadow: 0px 0px 30px -5px rgba(0, 0, 0, 0.5);
+  --mycolor: rgb(255, 248, 241, 0.95);
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 /* font style ----- */
@@ -10,63 +15,153 @@
 }
 
 /* navigation style -------  */
-nav{
-    display: flex;
-    width: 100%;
-    background-color: rgb(255, 248, 241, .8);
-    position: fixed;
-    box-shadow: 0px 0px 30px -5px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    
+nav {
+  display: flex;
+  width: 100%;
+  background-color: var(--mycolor);
+  position: fixed;
+  box-shadow: var(--myshadow);
+  z-index: 1000;
 }
-.nav-container{
-    margin: .5rem 2rem;
-    text-transform: uppercase;
-    font-weight: 900;
-    letter-spacing: .4rem;
-    font-size:.9rem ;
+.nav-container {
+  margin: 0.5rem 2rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.4rem;
+  font-size: 0.9rem;
 }
 
-.nav-brand{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-.nav-brand img{
-    width: 30px;
-    height: 30px;
-    border-radius: 20%;
-    object-fit: cover;
-    justify-self: center;
-    border: 5px solid gold;
+.nav-brand img {
+  width: 30px;
+  height: 30px;
+  border-radius: 20%;
+  object-fit: cover;
+  justify-self: center;
+  border: 5px solid gold;
 }
-/* banner style ============= */
-.banner{
-    width: 100%;
-    height: 80vh;
-    /* padding-top: 2rem; */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* banner style ================ */
+.banner {
+  width: 100%;
+  height: 85vh;
+  /* padding-top: 2rem; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-#banner-image{
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
-    opacity: .2;
-    z-index: -1;
-    position: absolute;
-    filter: blur(2.5px);
+#banner-bg-image {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  opacity: 0.2;
+  z-index: -1;
+  position: absolute;
+  filter: blur(2.5px);
 }
-.banner-content{
-    box-shadow: 0px 0px 30px -5px rgba(0, 0, 0, 0.5);
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: .8rem;
-    ;
+.banner-content {
+  box-shadow: var(--myshadow);
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.8rem;
+}
+.banner h1,
+h3 {
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+/* side bar --------------  */
+.banner-side-bar {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-items: center;
+  gap: 0.7rem;
+  width: 2rem;
+  padding: 0.7rem 0;
+  /* border-bottom-right-radius: 20%; */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: var(--mycolor);
+  box-shadow: var(--myshadow);
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.banner-side-bar img {
+  width: 40%;
+}
 
+/* about me container style ========= */
+.about-me {
+  background-color: rgba(241, 246, 255, 0.95);
+  /* height: 20rem; */
 }
-.banner h1,h3{
-    color: rgb(0, 0, 0) ;
-    text-align: center;
+.about-me-container {
+  background-color: rgba(241, 255, 248, 0.95);
+  transform: translateY(2.5rem);
+  padding: 2rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--myshadow);
+  justify-self: center;
+  gap: 3rem;
 }
+.about-me-info,
+.skills-container {
+  width: 60vw;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.about-me-info h3,
+.skills-container h3 {
+  display: block;
+  padding: 5px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  writing-mode: sideways-lr;
+  justify-self: center;
+  border-radius: 10%;
+}
+.about-me-info p {
+  display: block;
+  padding: 2px;
+}
+.skills-container {
+  justify-content: start;
+}
+.skills {
+  /* background-color: aqua; */
+  display: inline-flex;
+  gap: 0.5rem;
+}
+.skills div {
+  border: 1px solid rgba(0, 0, 0, 0.418);
+  box-shadow: 2px 2px 3px -2px;
+  padding: 4px;
+  border-radius: 10%;
+}
+
+/* .projects section ========== */
+.projects-container {
+  background-color: rgba(241, 255, 243, 0.95);
+}
+.projects-container {
+  background-color: rgb(244, 231, 201);
+  transform: translateY(2.5rem);
+  padding: 2rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--myshadow);
+  justify-self: center;
+  gap: 3rem;
+}
+`
